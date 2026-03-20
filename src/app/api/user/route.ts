@@ -4,7 +4,6 @@ import sessionOptions from '@/config/iron-session';
 import dbConnect from '@/utils/dbConnect';
 import User from '@/models/user.model';
 import bcrypt from 'bcrypt';
-import { jwtSign } from '@/apiUtil/jwt';
 import sendMail from '@/helpers/sendMail';
 import welcomeMail from '@/helpers/welcomeMail';
 
