@@ -1,0 +1,18 @@
+/*****************/
+/*  Testimonial  */
+/*****************/
+.tns-controls {
+  button[data-controls="prev"],
+  button[data-controls="next"] {
+    @apply absolute top-1/2 -translate-y-1/2 text-base w-8 h-8 rounded-full bg-white text-dark border-none z-1 shadow-lg shadow-slate-200;
+    &:hover {
+      @apply bg-orange-600 text-white;
+    }
+  }
+  button[data-controls="prev"] {
+    @apply left-0 md:-left-2;
+  }
+  button[data-controls="next"] {
+    @apply right-0 md:-right-2;
+  }
+}

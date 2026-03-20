@@ -1,0 +1,132 @@
+/*********************************/
+/*             General           */
+/*===============================*/
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply text-[15px] text-black;
+}
+
+p {
+  @apply leading-relaxed;
+}
+
+// --------------bounce-in-and out-animation----------------------
+@-webkit-keyframes new-bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+    transform-origin: bottom left;
+  }
+  50% {
+    transform: scale(1.03, 1.03);
+    transform-origin: bottom left;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+    transform-origin: bottom left;
+  }
+}
+@-webkit-keyframes new-bounce-out {
+  0% {
+    opacity: 1;
+    transform-origin: bottom left;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1, 1);
+    transform-origin: bottom left;
+  }
+}
+@keyframes new-bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+    transform-origin: bottom left;
+  }
+  50% {
+    transform: scale(1.03, 1.03);
+    transform-origin: bottom left;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+    transform-origin: bottom left;
+  }
+}
+@keyframes new-bounce-out {
+  0% {
+    opacity: 1;
+    transform-origin: bottom left;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1, 1);
+    transform-origin: bottom left;
+  }
+}
+// ------------End------------------------------------------
+
+/**
+ * ----------------------------------------
+ * animation slide-in-bottom
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/**
+ * ----------------------------------------
+ * animation fade-in-bottom
+ * ----------------------------------------
+ */
+ @-webkit-keyframes fade-in-bottom {
+  0% {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-bottom {
+  0% {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}

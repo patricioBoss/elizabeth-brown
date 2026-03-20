@@ -1,0 +1,133 @@
+{
+  "BTC": {
+    "asset_id": "BTC",
+    "name": "Bitcoin",
+    "type_is_crypto": 1,
+    "data_quote_start": "2014-02-24T00:00:00.0000000Z",
+    "data_quote_end": "2025-08-22T00:00:00.0000000Z",
+    "data_orderbook_start": "2014-03-17T00:00:00.0000000Z",
+    "data_orderbook_end": "2025-08-22T00:00:00.0000000Z",
+    "data_trade_start": "2011-09-13T00:00:00.0000000Z",
+    "data_trade_end": "2025-08-22T00:00:00.0000000Z",
+    "data_symbols_count": 13022,
+    "volume_1hrs_usd": 12021865951280.4,
+    "volume_1day_usd": 54401361225562.82,
+    "volume_1mth_usd": 27951186874132868,
+    "price_usd": 115778.123805501,
+    "id_icon": "4caf2b16-a017-4e26-a348-2cea69c34cba",
+    "chain_addresses": [
+      {
+        "chain_id": "ARBITRUM",
+        "network_id": "MAINNET",
+        "address": "0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f"
+      },
+      {
+        "chain_id": "ETHEREUM",
+        "network_id": "MAINNET",
+        "address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+      }
+    ],
+    "data_start": "2011-09-13",
+    "data_end": "2025-08-22"
+  },
+  "USDT": {
+    "asset_id": "USDT",
+    "name": "Tether",
+    "type_is_crypto": 1,
+    "data_quote_start": "2016-06-12T00:00:00.0000000Z",
+    "data_quote_end": "2025-08-22T00:00:00.0000000Z",
+    "data_orderbook_start": "2016-05-29T00:00:00.0000000Z",
+    "data_orderbook_end": "2025-08-22T00:00:00.0000000Z",
+    "data_trade_start": "2013-12-27T00:00:00.0000000Z",
+    "data_trade_end": "2025-08-22T00:00:00.0000000Z",
+    "data_symbols_count": 38152,
+    "volume_1hrs_usd": 499310496854.07,
+    "volume_1day_usd": 2227954019651.15,
+    "volume_1mth_usd": 14798636239051388,
+    "price_usd": 0.999459190546007,
+    "id_icon": "5ed65416-963e-4e57-998a-3c302da8936e",
+    "chain_addresses": [
+      {
+        "chain_id": "ARBITRUM",
+        "network_id": "MAINNET",
+        "address": "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9"
+      },
+      {
+        "chain_id": "ETHEREUM",
+        "network_id": "MAINNET",
+        "address": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+      }
+    ],
+    "data_start": "2013-12-27",
+    "data_end": "2025-08-22"
+  },
+  "ETH": {
+    "asset_id": "ETH",
+    "name": "Ethereum",
+    "type_is_crypto": 1,
+    "data_quote_start": "2015-08-10T00:00:00.0000000Z",
+    "data_quote_end": "2025-08-22T00:00:00.0000000Z",
+    "data_orderbook_start": "2016-03-15T00:00:00.0000000Z",
+    "data_orderbook_end": "2025-08-22T00:00:00.0000000Z",
+    "data_trade_start": "2016-03-09T00:00:00.0000000Z",
+    "data_trade_end": "2025-08-22T00:00:00.0000000Z",
+    "data_symbols_count": 11541,
+    "volume_1hrs_usd": 104866815548,
+    "volume_1day_usd": 746784225339.58,
+    "volume_1mth_usd": 526978159288990.8,
+    "price_usd": 4701.99567667946,
+    "id_icon": "604ae453-3d9f-4ad0-9a48-9905cce617c2",
+    "chain_addresses": [
+      {
+        "chain_id": "ARBITRUM",
+        "network_id": "MAINNET",
+        "address": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1"
+      },
+      {
+        "chain_id": "ETHEREUM",
+        "network_id": "MAINNET",
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+      }
+    ],
+    "data_start": "2015-08-10",
+    "data_end": "2025-08-22"
+  },
+  "DOGE": {
+    "asset_id": "DOGE",
+    "name": "DogeCoin",
+    "type_is_crypto": 1,
+    "data_quote_start": "2016-06-13T00:00:00.0000000Z",
+    "data_quote_end": "2025-08-22T00:00:00.0000000Z",
+    "data_orderbook_start": "2016-05-29T00:00:00.0000000Z",
+    "data_orderbook_end": "2025-08-22T00:00:00.0000000Z",
+    "data_trade_start": "2016-05-29T00:00:00.0000000Z",
+    "data_trade_end": "2025-08-22T00:00:00.0000000Z",
+    "data_symbols_count": 2924,
+    "volume_1hrs_usd": 32592203.02,
+    "volume_1day_usd": 463203417.87,
+    "volume_1mth_usd": 396172577998.43,
+    "price_usd": 0.230616807777005,
+    "id_icon": "63e240f3-047f-41c7-9179-6784bc719f63",
+    "data_start": "2016-05-29",
+    "data_end": "2025-08-22"
+  },
+  "XRP": {
+    "asset_id": "XRP",
+    "name": "Ripple",
+    "type_is_crypto": 1,
+    "data_quote_start": "2016-06-13T00:00:00.0000000Z",
+    "data_quote_end": "2025-08-22T00:00:00.0000000Z",
+    "data_orderbook_start": "2016-05-29T00:00:00.0000000Z",
+    "data_orderbook_end": "2025-08-22T00:00:00.0000000Z",
+    "data_trade_start": "2016-05-29T00:00:00.0000000Z",
+    "data_trade_end": "2025-08-22T00:00:00.0000000Z",
+    "data_symbols_count": 2091,
+    "volume_1hrs_usd": 65119577.24,
+    "volume_1day_usd": 1434316670.41,
+    "volume_1mth_usd": 756228429812.47,
+    "price_usd": 2.99792351662614,
+    "id_icon": "ba90bcb0-cafb-4801-ac5d-d310f47d6411",
+    "data_start": "2016-05-29",
+    "data_end": "2025-08-22"
+  }
+}

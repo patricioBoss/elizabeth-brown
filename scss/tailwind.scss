@@ -1,0 +1,93 @@
+/* Template Name: Upwind - Tailwind CSS Landing Page Template
+   Author: Shreethemes
+   Email: support@shreethemes.in
+   Website: https://shreethemes.in
+   Version: 1.6.0
+   Created: March 2022
+   File: Main Css File
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  html {
+    // @apply text-[75%] md:text-[100%];
+  }
+  * {
+    @apply font-body antialiased tracking-[-0.666667px];
+  }
+  p {
+    @apply font-body;
+  }
+  /* h5 {
+    @apply font-display font-semibold text-4xl md:text-5xl;
+  }
+  h6 {
+    @apply font-display font-semibold text-2xl;
+  } */
+}
+
+#tradingview_widget_wrapper div:nth-child(2) {
+  display: none !important;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.VIpgJd-ZVi9od-ORHb-OEVmcd {
+  display: none !important;
+}
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf-ti6hGc {
+  display: none !important;
+}
+
+.swiper-slide {
+  text-align: center;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.article-section {
+  p {
+  }
+  blockquote {
+  }
+}
+
+// FONTS
+@import "custom/fonts";
+
+// general
+@import "custom/general";
+
+// components
+@import "components/buttons";
+@import "components/breadcrumb";
+
+// structure
+@import "custom/structure/topnav";
+@import "custom/structure/footer";
+
+// pages
+@import "custom/pages/helper";
+@import "custom/pages/timeline";
+@import "custom/pages/countdown";
+@import "custom/pages/hero";
+
+// Plugins
+@import "custom/plugins/testi";

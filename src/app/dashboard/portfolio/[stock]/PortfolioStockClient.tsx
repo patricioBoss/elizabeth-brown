@@ -1,0 +1,101 @@
+'use client';
+
+import { useState } from 'react';
+import { Container, Typography, Grid } from '@mui/material';
+import useSWR from 'swr';
+// hooks
+import useSettings from '@/hooks/useSettings';
+// components
+import Page from '@/components/page';
+import StockPlanCards from '@/components/dashboard/StockPlanCards';
+import PaymentChoice from '@/components/dashboard/PaymentChoice';
+// helpers
+import stocks from '@/helpers/stocks';
+import plans from '@/helpers/plans';
+// fetchers
+import { getUserById } from '@/helpers/fetchers';
+
+// ----------------------------------------------------------------------
+
+interface StockData {
+  symbol: string;
+  longName: string;
+  shortName: string;
+  regularMarketPrice: number;
+  regularMarketChangePercent: number;
+}
+
+interface User {
+  _id: string;
+  [key: string]: unknown;
+}
+
+interface PayDetails {
+  capital: string;
+  currency: string;
+  stock: string;
+  planId: number;
+}
+
+interface Props {
+  user: User;
+  stockData: StockData | null;
+  quoteData: any;
+}
+
+// ----------------------------------------------------------------------
+
+export default function PortfolioStockClient({ user, stockData, quoteData }: Props) {
+  const { themeStretch } = useSettings();
+  const url = `/api/user/${user._id}`;
+
+  const [open, setOpen] = useState(false);
+  const [payDetails, setPayDetails] = useState<PayDetails>({
+    capital: '',
+    currency: '',
+    stock: '',
+    planId: 0,
+  });
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const { data } = useSWR(url, getUserById);
+
+  if (!stockData) return null;
+
+  return (
+    <Page title="All Plans">
+      <Container maxWidth={themeStretch ? false : 'xl'}>
+        <Typography variant="h4">
+          Invest in{' '}
+          <span
+            style={{ background: (stocks as Record<string, any>)[stockData.symbol]?.bg }}
+            className=" text-white p-2 rounded-md"
+          >
+            {stockData.longName}
+          </span>
+        </Typography>
+        <Grid mt={1} container spacing={3}>
+          {plans.map((plan, index) => (
+            <Grid key={plan.id} item xs={12} sm={6} md={4}>
+              <StockPlanCards
+                setDetails={setPayDetails}
+                plan={{ ...plan, id: index }}
+                handleOpen={handleOpen}
+                stockData={stockData}
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+      <PaymentChoice
+        open={open}
+        setOpen={setOpen}
+        details={payDetails}
+        user={data ?? user}
+      />
+    </Page>
+  );
+}

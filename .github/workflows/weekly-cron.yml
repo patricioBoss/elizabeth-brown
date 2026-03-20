@@ -1,0 +1,13 @@
+name: weekly-cron
+on:
+  schedule:
+    # Runs every Monday at 1 AM UTC
+    - cron: "0 1 * * 1"
+
+jobs:
+  weekly-cron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call our weekly API route
+        run: |
+          curl 'https://advisor.elizabethmendebrown.com/api/update-coin-prices'

@@ -1,0 +1,12 @@
+// sections
+import TwoView from '@/sections/two/view';
+
+// ----------------------------------------------------------------------
+
+export const metadata = {
+  title: 'Dashboard: Two',
+};
+
+export default function Page() {
+  return <TwoView />;
+}
