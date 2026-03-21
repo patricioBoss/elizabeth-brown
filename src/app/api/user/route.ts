@@ -1,15 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getIronSession } from 'iron-session';
-import sessionOptions from '@/config/iron-session';
 import dbConnect from '@/utils/dbConnect';
 import User from '@/models/user.model';
 import bcrypt from 'bcryptjs';
-import sendMail from '@/helpers/sendMail';
-import welcomeMail from '@/helpers/welcomeMail';
 
 const SALT_ROUNDS = Number(process.env.BCRYPT_SALT_ROUNDS) || 10;
-const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret_key_at_least_32_characters';
-const DOMAIN = process.env.NEXT_PUBLIC_SITE_URL || 'localhost:8084';
 
 // GET - Get all users
 export async function GET(request: NextRequest) {
@@ -54,17 +48,10 @@ export async function POST(request: NextRequest) {
     
     // Create user
     const user = new User(userData);
-    const savedUser = await user.save();
+    await user.save();
     
-    // Send welcome email (optional, don't fail if email fails)
-    try {
-      const loginLink = `https://${DOMAIN}/login`;
-      const msg = welcomeMail(userData.firstName, loginLink);
-      await sendMail(msg, 'Welcome to Elizabeth Brown Wealth Management', userData.email);
-    } catch (emailError) {
-      console.error('Welcome email error:', emailError);
-      // Don't fail registration if email fails
-    }
+    // Email sending disabled for testing timeout issues
+    // TODO: Re-enable after fixing timeout
     
     return NextResponse.json(
       { message: 'Successfully signed up!' },

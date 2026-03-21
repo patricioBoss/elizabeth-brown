@@ -29,6 +29,12 @@ const nextConfig = {
   },
   // Increase static page generation timeout
   staticPageGenerationTimeout: 180,
+  
+  // AWS Lambda optimization
+  experimental: {
+    // Enable server components external packages
+    serverComponentsExternalPackages: ['mongoose', 'bcryptjs'],
+  },
 };
 
 module.exports = nextConfig;
