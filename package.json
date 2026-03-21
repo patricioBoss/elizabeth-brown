@@ -1,8 +1,8 @@
 {
-  "name": "@minimal-kit/simple-next-ts",
-  "author": "Minimals",
-  "version": "5.0.0",
-  "description": "Simple Next & TypeScript",
+  "name": "elizabeth-brown",
+  "author": "Elizabeth Brown",
+  "version": "1.0.0",
+  "description": "Elizabeth Brown Wealth Management Platform",
   "private": true,
   "scripts": {
     "dev": "next dev -p 8084",
