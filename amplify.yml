@@ -6,6 +6,7 @@ frontend:
         - npm ci --legacy-peer-deps
     build:
       commands:
+        - env | grep -e MONGODB_URI -e JWT_SECRET -e BCRYPT_SALT_ROUNDS -e MAIL_SERVER -e SMTP_PORT -e USER_NAME -e PASSWORD -e EMAIL -e NEXT_PUBLIC_SITE_URL -e NEXT_PUBLIC_IMAGE_SERVER >> .env.production
         - npm run build
   artifacts:
     baseDirectory: .next
