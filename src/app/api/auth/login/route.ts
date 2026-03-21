@@ -3,7 +3,7 @@ import { getIronSession } from 'iron-session';
 import sessionOptions from '@/config/iron-session';
 import dbConnect from '@/utils/dbConnect';
 import User from '@/models/user.model';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 export async function POST(request: NextRequest) {
   try {

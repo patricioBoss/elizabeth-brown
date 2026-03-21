@@ -3,7 +3,7 @@ import { getIronSession } from 'iron-session';
 import sessionOptions from '@/config/iron-session';
 import dbConnect from '@/utils/dbConnect';
 import User from '@/models/user.model';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import sendMail from '@/helpers/sendMail';
 import welcomeMail from '@/helpers/welcomeMail';
 
