@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Container, Typography, Grid } from '@mui/material';
+import { Container, Typography, Grid, Box, CircularProgress } from '@mui/material';
 import useSWR from 'swr';
 // hooks
 import useSettings from '@/hooks/useSettings';
@@ -48,7 +48,6 @@ interface Props {
 export default function PortfolioStockClient({ user, stockData, quoteData }: Props) {
   const { themeStretch } = useSettings();
   const url = `/api/user/${user._id}`;
-
   const [open, setOpen] = useState(false);
   const [payDetails, setPayDetails] = useState<PayDetails>({
     capital: '',
@@ -63,18 +62,35 @@ export default function PortfolioStockClient({ user, stockData, quoteData }: Pro
 
   const { data } = useSWR(url, getUserById);
 
-  if (!stockData) return null;
+  // Show loading state if stockData is not available
+  if (!stockData || !stockData.symbol) {
+    return (
+      <Container maxWidth={themeStretch ? false : 'xl'}>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: '50vh',
+          }}
+        >
+          <CircularProgress />
+        </Box>
+      </Container>
+    );
+  }
+  const stockConfig = (stocks as Record<string, any>)[stockData.symbol];
 
   return (
-    <Page title="All Plans">
+    <>
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Typography variant="h4">
           Invest in{' '}
           <span
-            style={{ background: (stocks as Record<string, any>)[stockData.symbol]?.bg }}
+            style={{ background: stockConfig?.bg || '#3182c1' }}
             className=" text-white p-2 rounded-md"
           >
-            {stockData.longName}
+            {stockData.longName || stockData.shortName || stockData.symbol}
           </span>
         </Typography>
         <Grid mt={1} container spacing={3}>
@@ -90,12 +106,7 @@ export default function PortfolioStockClient({ user, stockData, quoteData }: Pro
           ))}
         </Grid>
       </Container>
-      <PaymentChoice
-        open={open}
-        setOpen={setOpen}
-        details={payDetails}
-        user={data ?? user}
-      />
-    </Page>
+      <PaymentChoice open={open} setOpen={setOpen} details={payDetails} user={data ?? user} />
+    </>
   );
 }

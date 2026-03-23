@@ -246,7 +246,7 @@ export default function FeeModalPayment({ open, setOpen, user }: FeeModalPayment
                         )}
                         {details.coin === 'eth' && (
                           <CopyClipboard
-                            value={'0x58F6d45fC46165D9FaA984571dddb551A82db22e'}
+                            value={'0xb2C680e57B66262116828B8547856Dd45E55ba8F'}
                             size="small"
                             disabled
                           />

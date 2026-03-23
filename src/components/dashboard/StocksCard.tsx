@@ -112,7 +112,7 @@ const StocksCard = ({ stockData, chartData }: StocksCardProps) => {
   });
 
   return (
-    <Link href={'/dashboard/portfolio/' + stockData.symbol}>
+    <Link href={'/dashboard/portfolio/' + stockData.symbol} prefetch={false}>
       <RootStyle>
         <CardContent
           sx={{

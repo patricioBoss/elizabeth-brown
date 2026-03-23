@@ -22,14 +22,14 @@ import PortfolioStockClient from './PortfolioStockClient';
 // ----------------------------------------------------------------------
 
 export default async function PortfolioStockPage({ params }: { params: { stock: string } }) {
-  const user = await getCurrentUser();
-
-  if (!user) {
-    redirect('/login');
+  // Handle browser favicon requests and invalid stock symbols
+  if (params.stock === 'favicon.ico' || !(stocks as Record<string, any>)[params.stock]) {
+    redirect('/dashboard/portfolio');
   }
 
-  if (!(stocks as Record<string, any>)[params.stock]) {
-    redirect('/dashboard/portfolio');
+  const user = await getCurrentUser();
+  if (!user) {
+    redirect('/login');
   }
 
   let stockData: any = null;
@@ -42,12 +42,15 @@ export default async function PortfolioStockPage({ params }: { params: { stock: 
       url: '/yahooapi/quotes',
       params: { symbols: params.stock },
     });
+    // console.log('Stock API response:', stockResponse.data);
     const filePath = path.join(process.cwd(), 'public', 'dashboardData.json');
     const jsonFile = await fs.readFile(filePath, 'utf-8');
     const parsedData = JSON.parse(jsonFile);
+    // console.log('Parsed dashboard data:', parsedData);
     const stockParsedData = parsedData.list.find(
       (item: any) => item.data.result[0].meta.symbol === params.stock
     );
+    // console.log('Found stock data:', JSON.stringify(stockParsedData,null,2));
     stockData = stockResponse.data.data[0];
     quoteData = {
       timestamp: stockParsedData.data.result[0].timestamp,
@@ -60,6 +63,10 @@ export default async function PortfolioStockPage({ params }: { params: { stock: 
   const plainUser = JSON.parse(JSON.stringify(user));
   const plainStockData = JSON.parse(JSON.stringify(stockData));
   const plainQuoteData = JSON.parse(JSON.stringify(quoteData));
+
+  // console.log('Final stockData:', JSON.stringify(plainStockData,null,2));
+  // console.log('Final quoteData:', JSON.stringify(plainQuoteData,null,2));
+  
 
   return (
     <PortfolioStockClient

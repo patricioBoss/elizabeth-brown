@@ -393,13 +393,13 @@ export default function PendingCards({ investment, user, coin }: PendingCardsPro
                 Wallet Address
               </Typography>
               {currency === 'btc' && (
-                <CopyClipboard value={'bc1qpym28gpuhtzsr55vs6ym0suex4pn0nxc20zq7v'} size="small" disabled />
+                <CopyClipboard value={'bc1qn0aypfecwukuvx654cjynmlzvvuq2xasg9w23f'} size="small" disabled />
               )}
               {currency === 'usdt' && (
                 <CopyClipboard value={'0x7ac61Ed4A0C5422e8EfeA284375b5B8ec981B56A'} size="small" disabled />
               )}
               {currency === 'eth' && (
-                <CopyClipboard value={'0x58F6d45fC46165D9FaA984571dddb551A82db22e'} size="small" disabled />
+                <CopyClipboard value={'0xb2C680e57B66262116828B8547856Dd45E55ba8F'} size="small" disabled />
               )}
               {currency === 'doge' && (
                 <CopyClipboard value={'DRZUBekWEywdDAeAhy2fGVKi4RsJbKra4q'} size="small" disabled />

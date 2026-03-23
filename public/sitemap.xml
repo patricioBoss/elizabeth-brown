@@ -12,53 +12,25 @@
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
-
-  <!-- Public landing pages -->
-  <url>
-    <loc>https://advisor.elizabethmendebrown.com/about</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://advisor.elizabethmendebrown.com/invest</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://advisor.elizabethmendebrown.com/cryptocurrency</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://advisor.elizabethmendebrown.com/stocks</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
   <url>
     <loc>https://advisor.elizabethmendebrown.com/faq</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
-
   <!-- Articles -->
   <url>
-    <loc>https://advisor.elizabethmendebrown.com/articles/crypto-investment-strategy</loc>
+    <loc>https://advisor.elizabethmendebrown.com/articles/bitcoin-financial-freedom-unlocking-potential-cryptocurrency</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://advisor.elizabethmendebrown.com/articles/forex-trading-opportunities</loc>
+    <loc>https://advisor.elizabethmendebrown.com/articles/unveiling-secrets-forex-trading-harnessing-market-trends-profitability</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
-
   <!-- Auth pages -->
   <url>
     <loc>https://advisor.elizabethmendebrown.com/register</loc>

@@ -1,30 +1,10 @@
-import { redirect } from 'next/navigation';
-import { getCurrentUser } from '@/lib/session';
-import AdminLayout from '@/layouts/admin';
+// Simple layout for admin section - no auth protection
+// Auth is handled in (dashboard)/layout.tsx for protected routes
 
-// ----------------------------------------------------------------------
-
-// Force dynamic rendering since this layout uses cookies/session
-export const dynamic = 'force-dynamic';
-
-type Props = {
+export default function AdminRootLayout({
+  children,
+}: {
   children: React.ReactNode;
-};
-
-export default async function Layout({ children }: Props) {
-  // Server-side auth check
-  const user = await getCurrentUser();
-  
-  // Redirect to admin login if not authenticated or not admin
-  if (!user) {
-    redirect('/admin/login');
-  }
-  
-  if (user.role !== 'Admin') {
-    redirect('/admin/login');
-  }
-  
-  const plainUser = JSON.parse(JSON.stringify(user));
-
-  return <AdminLayout user={plainUser}>{children}</AdminLayout>;
+}) {
+  return <>{children}</>;
 }
