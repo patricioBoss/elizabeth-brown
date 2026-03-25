@@ -17,7 +17,7 @@ const sampleMailTemplate = (name = '', loginLink: string, message: string): stri
             <table cellpadding="0" cellspacing="0" style="font-family: Nunito, sans-serif; font-size: 15px; font-weight: 400; width: 600px; border: none; margin: 0 auto; overflow: hidden; background-color: #fff; box-shadow: 0 0 3px rgba(60, 72, 88, 0.15);">
                 <thead>
                     <tr style="background-color: #14609a; padding: 3px 0; border: none; line-height: 68px; text-align: center; color: #fff; font-size: 24px; letter-spacing: 1px;">
-                        <th scope="col"><img style="width: 300px; margin-top: 50px;" src="https://i.postimg.cc/GpLHBgVc/mail-logo.png" alt=""></th>
+                        <th scope="col"><img style="width: 300px; margin-top: 50px;" src="https://advisor.elizabethmendebrown.com/img/mail-logo.png" alt=""></th>
                     </tr>
                 </thead>
                 <tbody>

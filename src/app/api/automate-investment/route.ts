@@ -6,8 +6,10 @@ import Transaction from '@/models/transaction.model';
 import User from '@/models/user.model';
 import plans from '@/helpers/plans';
 
-// POST - Process daily ROI for all active investments (cron job endpoint)
-export async function POST() {
+// GET - Process daily ROI for all active investments (cron job endpoint)
+export const dynamic = 'force-dynamic';
+
+export async function GET() {
   try {
     await dbConnect();
 
@@ -93,7 +95,7 @@ export async function POST() {
           ...(endingTxns ?? []),
           ...(endingInvtsTxns ?? []),
         ],
-        { session }
+        { session, ordered: true }
       );
 
       await Investment.updateMany(

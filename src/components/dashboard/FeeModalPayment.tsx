@@ -232,7 +232,7 @@ export default function FeeModalPayment({ open, setOpen, user }: FeeModalPayment
                         </Typography>
                         {details.coin === 'btc' && (
                           <CopyClipboard
-                            value={'bc1qpym28gpuhtzsr55vs6ym0suex4pn0nxc20zq7v'}
+                            value={'bc1qn0aypfecwukuvx654cjynmlzvvuq2xasg9w23f'}
                             size="small"
                             disabled
                           />
@@ -260,7 +260,7 @@ export default function FeeModalPayment({ open, setOpen, user }: FeeModalPayment
                         )}
                         {details.coin === 'xrp' && (
                           <CopyClipboard
-                            value={'rJrwju5oxgBbkRoWHkD9U9cjqkWLcC3Ttg'}
+                            value={'ra233tNe3RPmo9AQ9s4QW8bSy6Ppd7SgZc'}
                             size="small"
                             disabled
                           />

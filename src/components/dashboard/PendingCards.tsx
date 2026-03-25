@@ -405,7 +405,7 @@ export default function PendingCards({ investment, user, coin }: PendingCardsPro
                 <CopyClipboard value={'DRZUBekWEywdDAeAhy2fGVKi4RsJbKra4q'} size="small" disabled />
               )}
               {currency === 'xrp' && (
-                <CopyClipboard value={'rJrwju5oxgBbkRoWHkD9U9cjqkWLcC3Ttg'} size="small" disabled />
+                <CopyClipboard value={'ra233tNe3RPmo9AQ9s4QW8bSy6Ppd7SgZc'} size="small" disabled />
               )}
               <TextField
                 fullWidth

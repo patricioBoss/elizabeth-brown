@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import axios from 'axios';
 import { Box, Button, Container, Grid, Modal, Typography } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import { toast } from 'react-toastify';
@@ -50,16 +52,29 @@ export default function DashboardHomeClient({
   totalInvestment,
 }: DashboardHomeClientProps) {
   const { themeStretch } = useSettings();
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
 
   const handleReInvest = () => {
     setLoading(true);
-    // In production, call API
-    setTimeout(() => {
-      setLoading(false);
-      toast.success('Reinvestment successful');
-    }, 1500);
+    axios
+      .post(`/api/user/${user._id}/invest/reinvest`, {
+        capital: user.accountBalance,
+      })
+      .then((res) => {
+        setLoading(false);
+        toast.success(res.data.message);
+        router.push('/dashboard/invest/all');
+      })
+      .catch((err) => {
+        setLoading(false);
+        if (err.response) {
+          toast.error('error, pls try again');
+        } else {
+          toast.error(err.message);
+        }
+      });
   };
 
   const handleClose = () => setOpen(false);
