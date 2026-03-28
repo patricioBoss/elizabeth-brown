@@ -19,7 +19,7 @@ import { MdDelete } from 'react-icons/md';
 import { LoadingButton } from '@mui/lab';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@bprogress/next';
 import { capitalCase } from 'change-case';
 import numeral from 'numeral';
 import Image from 'next/image';

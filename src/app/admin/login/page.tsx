@@ -3,7 +3,7 @@
 import { LoadingButton } from '@mui/lab';
 import axios from 'axios';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@bprogress/next';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 

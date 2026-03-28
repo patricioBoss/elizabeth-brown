@@ -3,13 +3,12 @@
 import React, { useCallback, useState } from 'react';
 import { styled } from '@mui/material/styles';
 import { Typography, Stack, Box } from '@mui/material';
-import LinearProgress, {
-  linearProgressClasses,
-} from '@mui/material/LinearProgress';
+import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
 import CopyClipboard from './CopyClipboard';
 import { toast } from 'react-toastify';
 import axios from 'axios';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@bprogress/next';
+import { useSWRConfig } from 'swr';
 
 // ----------------------------------------------------------------------
 
@@ -33,12 +32,11 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 10,
   borderRadius: 5,
   [`&.${linearProgressClasses.colorPrimary}`]: {
-    backgroundColor:
-      theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800],
+    backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 100 : 800],
   },
   [`& .${linearProgressClasses.bar}`]: {
     borderRadius: 5,
-    backgroundColor: theme.palette.mode === 'light' ? '#1a90ff' : '#308fe8',
+    backgroundColor: theme.palette.mode === 'light' ? '#3181c1' : '#308fe8',
   },
 }));
 
@@ -60,6 +58,7 @@ interface PictureUpdateBlockProps {
 // ----------------------------------------------------------------------
 
 function PictureUpdateBlock({ user, url }: PictureUpdateBlockProps) {
+  const { mutate } = useSWRConfig();
   const [error, setError] = useState('');
   const [progressInfo, setProgressInfo] = useState(0);
   const [imageUrl, setImageUrl] = useState('');
@@ -91,13 +90,10 @@ function PictureUpdateBlock({ user, url }: PictureUpdateBlockProps) {
       };
 
       axios
-        .post(
-          `${process.env.NEXT_PUBLIC_IMAGE_SERVER}/user/photo/${user._id}`,
-          photoData,
-          config
-        )
+        .post(`${process.env.NEXT_PUBLIC_IMAGE_SERVER}/user/photo/${user._id}`, photoData, config)
         .then((res) => {
           setProgressLoading(false);
+          mutate(url);
           router.refresh();
           toast.success(`img update successful`);
         })
@@ -145,10 +141,9 @@ function PictureUpdateBlock({ user, url }: PictureUpdateBlockProps) {
                 />
               </>
             ) : (
-              <BorderLinearProgress
-                variant="determinate"
-                value={progressInfo}
-              />
+              <div className="flex justify-center bg-[#0000003a] items-center w-full h-full absolute top-0 left-0">
+                <BorderLinearProgress className='w-4/5'  variant="determinate" value={progressInfo} />
+              </div>
             )}
           </div>
           {error && (
@@ -189,9 +184,7 @@ function PictureUpdateBlock({ user, url }: PictureUpdateBlockProps) {
           Referral:{' '}
         </Typography>
         <CopyClipboard
-          value={`${isClient ? window.location.hostname : ''}/register?ref=${
-            user._id
-          }`}
+          value={`${isClient ? window.location.hostname : ''}/register?ref=${user._id}`}
           size="small"
           disabled
         />

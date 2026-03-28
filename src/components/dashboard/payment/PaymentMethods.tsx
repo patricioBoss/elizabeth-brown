@@ -13,7 +13,7 @@ import {
 } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import axios from 'axios';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@bprogress/next';
 import { toast } from 'react-toastify';
 import Image from 'next/image';
 // components

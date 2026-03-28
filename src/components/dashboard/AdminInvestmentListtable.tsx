@@ -27,7 +27,7 @@ import { TrashIcon } from '@heroicons/react/24/outline';
 import { CgMoreVertical } from 'react-icons/cg';
 import CustomPopover from '@/components/custom-popover';
 import DeleteInvestmentModal from './DeleteInvestmentModal';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@bprogress/next';
 
 // ----------------------------------------------------------------------
 

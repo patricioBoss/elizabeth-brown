@@ -17,10 +17,10 @@ const navigation: NavItem[] = [
     name: 'About',
     current: false,
     children: [
-      { name: 'My Story and Services', href: '#portfolio-details' },
+      { name: 'My Story and Services', href: '#my-story' },
       {
         name: 'Wealth Management Global Investment Office',
-        href: '#portfolio-details',
+        href: '#client-service-team',
       },
       { name: 'Thought Leadership', href: '#thought-list' },
     ],
@@ -30,7 +30,7 @@ const navigation: NavItem[] = [
     current: false,
     children: [
       { name: 'Start a Conversation', href: 'https://wa.me/19187801300' },
-      { name: 'Location', href: '#portfolio-details' },
+      { name: 'Location', href: '#location' },
     ],
   },
 ];
@@ -103,10 +103,7 @@ const MobileMenuSlide: React.FC<MobileMenuSlideProps> = ({ open, setOpen }) => {
                         </Link>
 
                         {navigation.map(({ name, children }) => (
-                          <div
-                            key={name}
-                            className="border-t border-t-[#E9E9E9]"
-                          >
+                          <div key={name} className="border-t border-t-[#E9E9E9]">
                             <div className="py-[22px] px-5 text-xl font-bold cursor-pointer">
                               {name}
                             </div>
@@ -120,7 +117,7 @@ const MobileMenuSlide: React.FC<MobileMenuSlideProps> = ({ open, setOpen }) => {
                                     }}
                                   >
                                     <a
-                                      href={link.href.startsWith('#') ? link.href : '/' + link.href}
+                                      href={link.href}
                                       className="text-base py-[25px] pr-[63px] block"
                                     >
                                       {link.name}
@@ -180,10 +177,7 @@ const MobileMenuSlide: React.FC<MobileMenuSlideProps> = ({ open, setOpen }) => {
                               </Link>
                             </li>
                             <li className="border-t border-t-[#E9E9E9] w-full pl-[25px]">
-                              <Link
-                                href="/login"
-                                className="text-base py-[25px] pr-[63px] block"
-                              >
+                              <Link href="/login" className="text-base py-[25px] pr-[63px] block">
                                 Login
                               </Link>
                             </li>
@@ -232,8 +226,7 @@ const Navbar: React.FC = () => {
   return (
     <div
       className={
-        'bg-white z-[1000] transition-all duration-700' +
-        (scrolledDown ? ' sticky top-0 ' : '')
+        'bg-white z-[1000] transition-all duration-700' + (scrolledDown ? ' sticky top-0 ' : '')
       }
     >
       <div className="flex justify-between items-center container">
@@ -245,18 +238,14 @@ const Navbar: React.FC = () => {
             aria-label="Open menu"
           />
           <Link href="/">
-            <img
-              className="ml-[1rem] md:ml-0 h-[29px] my-[20px]"
-              src="/logo/logo.svg"
-              alt="logo"
-            />
+            <img className="ml-[1rem] md:ml-0 h-[29px] my-[20px]" src="/logo/logo.svg" alt="logo" />
           </Link>
         </div>
         <div className="hidden md:block">
           <ul className="flex text-black gap-4">
             <li className="after:content-[''] after:block after:w-0 after:h-[6px] w-fit after:transition-width after:bg-[#3182c1] after:duration-300 hover:after:w-full">
               <a
-                href="#portfolio-details"
+                href="#my-story"
                 className="py-[25px] text-xl font-bold cursor-pointer block"
               >
                 About
@@ -292,30 +281,17 @@ const Navbar: React.FC = () => {
                   </g>
                   <defs>
                     <clipPath id="clip0_1_489">
-                      <rect
-                        width="16"
-                        height="15"
-                        fill="white"
-                        transform="translate(0.280029)"
-                      />
+                      <rect width="16" height="15" fill="white" transform="translate(0.280029)" />
                     </clipPath>
                     <clipPath id="clip1_1_489">
-                      <rect
-                        width="18"
-                        height="16"
-                        fill="white"
-                        transform="translate(0.280029)"
-                      />
+                      <rect width="18" height="16" fill="white" transform="translate(0.280029)" />
                     </clipPath>
                   </defs>
                 </svg>
                 Client Login
                 <ul className="absolute overflow-hidden top-0 flex transition-all duration-500 flex-col h-0 group-hover/login:h-[200%] translate-y-[53%] z-[1000] bg-white">
                   {['Register', 'Login'].map((text) => (
-                    <li
-                      key={text}
-                      className="border-t relative border-t-[#E9E9E9] w-full"
-                    >
+                    <li key={text} className="border-t relative border-t-[#E9E9E9] w-full">
                       <Link
                         href={'/' + text.toLowerCase()}
                         className="py-[25px] pl-[25px] block pr-[63px] text-base"

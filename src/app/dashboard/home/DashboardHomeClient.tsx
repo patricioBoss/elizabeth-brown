@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@bprogress/next';
 import axios from 'axios';
 import { Box, Button, Container, Grid, Modal, Typography } from '@mui/material';
 import { LoadingButton } from '@mui/lab';

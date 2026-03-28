@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from '@bprogress/next';
+import { useSearchParams } from 'next/navigation';
 import axios from 'axios';
 
 // Components

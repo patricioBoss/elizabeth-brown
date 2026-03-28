@@ -1,7 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
 
 const TickerTape = dynamic(() => import('react-ts-tradingview-widgets').then((w) => w.TickerTape), {
@@ -12,12 +12,13 @@ const LocationMap = dynamic(() => import('./LocationMap'), { ssr: false });
 
 interface Tab {
   name: string;
+  hash: string;
 }
 
 const tabs: Tab[] = [
-  { name: 'My Story and Services' },
-  { name: 'Client Service Team' },
-  { name: 'Location' },
+  { name: 'My Story and Services', hash: 'my-story' },
+  { name: 'Client Service Team', hash: 'client-service-team' },
+  { name: 'Location', hash: 'location' },
 ];
 
 const services: string[] = [
@@ -191,6 +192,35 @@ const MyLocation: React.FC = () => {
 const Services: React.FC = () => {
   const [selected, setSelected] = useState(tabs[0].name);
 
+  // Handle hash-based tab selection
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      const matchingTab = tabs.find((tab) => tab.hash === hash);
+      if (matchingTab) {
+        setSelected(matchingTab.name);
+        // Scroll to the portfolio-details section
+        const element = document.getElementById('portfolio-details');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
+
+    // Check hash on mount
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const handleTabClick = (tab: Tab) => {
+    setSelected(tab.name);
+    // Update URL hash without triggering scroll
+    window.history.replaceState(null, '', `#${tab.hash}`);
+  };
+
   return (
     <div className="container -translate-y-[100px] flex py-6 gap-7 h-fit">
       <div id="portfolio-details" className="bg-white w-full p-4">
@@ -199,7 +229,7 @@ const Services: React.FC = () => {
             {tabs.map((tab) => (
               <button
                 key={tab.name}
-                onClick={() => setSelected(tab.name)}
+                onClick={() => handleTabClick(tab)}
                 className={
                   (selected === tab.name
                     ? 'border-[#0F8EC7] '

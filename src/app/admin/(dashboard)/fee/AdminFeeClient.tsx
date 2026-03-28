@@ -1,7 +1,8 @@
 'use client';
 
 import { Container, Pagination } from '@mui/material';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from '@bprogress/next';
+import { useSearchParams } from 'next/navigation';
 import AdminDepositListtable from '@/components/dashboard/AdminFeeListtable';
 
 // ----------------------------------------------------------------------

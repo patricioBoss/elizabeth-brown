@@ -5,6 +5,7 @@ import Footer from 'src/components/landing-pages-main/Footer';
 import Navbar from 'src/components/landing-pages-main/Navbar';
 import RandomToast from 'src/components/RandomToast';
 import WhatsappFloatButton from 'src/components/WhatsappFloatButton';
+import TawkMessenger from 'src/components/TawkMessenger';
 
 interface LandingLayoutProps {
   children: ReactNode;
@@ -18,6 +19,7 @@ const LandingLayout: React.FC<LandingLayoutProps> = ({ children }) => {
       {children}
       <RandomToast />
       <WhatsappFloatButton />
+      <TawkMessenger />
       <Footer />
     </div>
   );

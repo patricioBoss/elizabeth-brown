@@ -15,7 +15,7 @@ import { FaChevronLeft } from 'react-icons/fa';
 import { LoadingButton } from '@mui/lab';
 import { capitalCase } from 'change-case';
 import numeral from 'numeral';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@bprogress/next';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 

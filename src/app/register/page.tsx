@@ -13,7 +13,7 @@ import NextLink from 'next/link';
 // sections
 import RegisterForm from 'src/sections/auth/register-form';
 import { useEffect, useRef } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@bprogress/next';
 import axios from 'axios';
 
 // ----------------------------------------------------------------------

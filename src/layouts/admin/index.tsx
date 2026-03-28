@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter } from '@bprogress/next';
+import { usePathname } from 'next/navigation';
 import axios from 'axios';
 import { styled, useTheme, alpha } from '@mui/material/styles';
 import {

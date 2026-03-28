@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@bprogress/next';
 import { toast } from 'react-toastify';
 import useSWR from 'swr';
 import axios from 'axios';

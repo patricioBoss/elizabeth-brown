@@ -26,7 +26,7 @@ import { toast } from 'react-toastify';
 import { TrashIcon } from '@heroicons/react/24/outline';
 import CustomPopover from '@/components/custom-popover';
 import { CgMoreVertical } from 'react-icons/cg';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@bprogress/next';
 import DeleteWithdrawalModal from './DeleteWithdrawalModal';
 
 // ----------------------------------------------------------------------

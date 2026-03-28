@@ -21,7 +21,7 @@ import Scrollbar from '@/components/scrollbar';
 import { TrashIcon } from '@heroicons/react/24/outline';
 import { CgMoreVertical } from 'react-icons/cg';
 import CustomPopover from '@/components/custom-popover';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@bprogress/next';
 import DeleteFeeModal from './DeleteFeeModal';
 
 // ----------------------------------------------------------------------

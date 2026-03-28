@@ -25,7 +25,7 @@ import 'tiny-slider/dist/tiny-slider.css';
 import ThemeProvider from 'src/theme';
 import { primaryFont } from 'src/theme/typography';
 // components
-import ProgressBar from 'src/components/progress-bar';
+import Providers from 'src/components/providers/Providers';
 import MotionLazy from 'src/components/animate/motion-lazy';
 import { SettingsProvider, SettingsDrawer } from 'src/components/settings';
 // contexts
@@ -122,8 +122,7 @@ export default function RootLayout({ children }: Props) {
             <MotionLazy>
               <CollapseDrawerProvider>
                 <SettingsDrawer />
-                <ProgressBar />
-                {children}
+                <Providers>{children}</Providers>
                 <ToastContainer
                   position="top-right"
                   autoClose={4000}

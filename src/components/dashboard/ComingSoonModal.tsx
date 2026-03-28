@@ -8,7 +8,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import Button from '@mui/material/Button';
 import { LoadingButton } from '@mui/lab';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@bprogress/next';
 
 // ----------------------------------------------------------------------
 

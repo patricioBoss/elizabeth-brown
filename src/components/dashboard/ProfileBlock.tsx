@@ -8,6 +8,7 @@ import { Box, Stack, TextField, Button, Typography } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import { useSWRConfig } from 'swr';
 
 // ----------------------------------------------------------------------
 
@@ -27,6 +28,7 @@ interface ProfileBlockProps {
 // ----------------------------------------------------------------------
 
 function ProfileBlock({ user, url }: ProfileBlockProps) {
+    const { mutate } = useSWRConfig();
   const [edit, setEdit] = useState(false);
 
   const RegisterSchema = Yup.object().shape({
@@ -54,6 +56,7 @@ function ProfileBlock({ user, url }: ProfileBlockProps) {
       axios
         .post(`/api/user/${user._id}`, values)
         .then((res) => {
+         mutate(url);
           toggleEdit();
           toast.success(res.data.message);
         })
