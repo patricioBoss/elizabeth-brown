@@ -95,7 +95,7 @@ const MyStory: React.FC = () => {
           </ul>
         </div>
       </div>
-      <div className="px-3">
+      {/* <div className="px-3">
         <p className="text-[#757575] my-[62px]">
           Registered with National Financial Services LLC (CRD#: 13041) since 12/11/2023.
           Securities Agent: DC, WI, WA, VT, VA, UT, TX, TN, SC, RI, OH, NY, NJ, NC, MI, MD, MA,
@@ -116,7 +116,7 @@ const MyStory: React.FC = () => {
             . National Financial Services LLC is a member of FINRA/SIPC.
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
