@@ -41,11 +41,11 @@ const Hero: React.FC = () => {
         </div>
         <p className="text-lg mt-[16px] text-center">
           <span className="font-bold">Direct:&nbsp;&nbsp;</span>
-          (+1(918)780-1300)
+          (+1(432)246-4294)
         </p>
         <div className="flex justify-center mt-[30px]">
           <a
-            href="https://wa.me/+19187801300"
+            href="https://wa.me/+14322464294"
             target="_blank"
             rel="noreferrer"
             className="py-4 px-[48px] bg-[#3182c1] text-[19px] rounded-full"
