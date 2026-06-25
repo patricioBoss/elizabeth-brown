@@ -150,7 +150,7 @@ const ServiceTeam: React.FC = () => {
           <span className="font-semibold">Registered Since:</span> December 11, 2023
         </p>
         <p className="text-base">
-          <span className="font-semibold">Phone:</span> +1(432)246-4294
+          <span className="font-semibold">Phone:</span> +1(424)279-3916
         </p>
         <p className="text-base">
           <span className="font-semibold">Email:</span> elizabethmendebrown@gmail.com
@@ -172,7 +172,7 @@ const MyLocation: React.FC = () => {
             <br />
             Durham, NC 27709-8204, USA
             <br />
-            Direct: +1(432)246-4294
+            Direct: +1(424)279-3916
           </p>
           <p className="text-base font-semibold mb-1">Boston Office</p>
           <p className="text-base">
